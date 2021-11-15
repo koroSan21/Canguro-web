@@ -1,0 +1,53 @@
+﻿@using Canguro.Core.Entities
+@model List<Ciudadano>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Registro de ciudadanos</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido Paterno</th>
+                                    <th>Apellido Materno</th>
+                                    <th>Teléfono</th>
+                                    <th>Tipo de teléfono</th>
+                                    <th>Correo electrónico</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (Ciudadano c in Model)
+                                {
+                                    <tr>
+                                        <td>@c.Nombre</td>
+                                        <td>@c.ApellidoPaterno</td>
+                                        <td>@c.ApellidoMaterno</td>
+                                        <td>@c.Telefono</td>
+                                        <td>@c.TipoTelefono</td>
+                                        <td>@c.Correo</td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

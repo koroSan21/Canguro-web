@@ -1,0 +1,32 @@
+﻿@using CanguroWeb.Models;
+@using Canguro.Core.Entities;
+@model CiudadModel
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Ciudad</h5>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <input id="idCiudad" value="@Model.Ciudad.Id" type="hidden"/>
+                <div class="col-md-12">
+                    <label>Nombre:</label>
+                    <input type="text" id="nombre" class="form-control" value="@Model.Ciudad.Nombre"/>
+                </div>
+                <div class="col-md-12">
+                    <label>Estado</label>
+                    <select class="form-control" id="estado">
+                        @foreach (Estado e in Model.Estados) {
+                            <option value="@e.Id" @if (Model.Ciudad.Estado != null) { if(Model.Ciudad.Estado.Id == e.Id) {<text>selected</text>} } >@e.Nombre</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="btn btn-primary" onclick="guardar()">Guardar</a>
+            <a class="btn btn-link" data-dismiss="modal">Cerrar</a>
+        </div>
+    </div>
+</div>
+

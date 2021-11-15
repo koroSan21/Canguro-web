@@ -1,0 +1,53 @@
+﻿@using Canguro.Core.Entities
+@model List<Ciudad>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Ciudades</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a class="btn btn-success" onclick="abrirModal(0)">Agregar nuevo</a>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Ciudad</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (Ciudad c in Model)
+                                {
+                                    <tr>
+                                        <td>@c.Nombre</td>
+                                        <td>@c.Estado.Nombre</td>
+                                        <td>
+                                            <a onclick="abrirModal(@c.Id)" class="btn btn-success"> Editar </a>
+                                            <a onclick="eliminar(@c.Id)" class="btn btn-danger"> Eliminar </a>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/js/canguro/ciudad.js"></script>
+

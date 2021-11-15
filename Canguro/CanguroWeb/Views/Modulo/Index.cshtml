@@ -1,0 +1,55 @@
+﻿@using Canguro.Core.Entities
+@model List<Modulo>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Módulos por ciudad</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Clave</th>
+                                    <th>Modulo</th>
+                                    <th>Dirección</th>
+                                    <th>Referencia</th>
+                                    <th>Horario</th>
+                                    <th>Ciudad</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (Modulo m in Model)
+                                {
+                                    <tr>
+                                        <td>@m.Id</td>
+                                        <td>@m.Nombre</td>
+                                        <td>@m.Direccion</td>
+                                        <td>@m.Referencia</td>
+                                        <td>@m.Horario</td>
+                                        <td>@m.Ciudad.Nombre</td>
+                                        <td>Acciones</td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

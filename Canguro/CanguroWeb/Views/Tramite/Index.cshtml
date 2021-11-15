@@ -1,0 +1,47 @@
+﻿@using Canguro.Core.Entities
+@model List<Tramite>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Trámites disponibles</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a class="btn btn-success" onclick="abrirModal()">Agregar nuevo</a>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (Tramite t in Model)
+                                {
+                                    <tr>
+                                        <td>@t.Nombre</td>
+                                        <td>Acciones</td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/js/canguro/tramite.js"></script>

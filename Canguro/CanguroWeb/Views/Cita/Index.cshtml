@@ -1,0 +1,55 @@
+﻿@using Canguro.Core.Transporte
+@model List<CitaDTO>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Entidades federativas</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Folio</th>
+                                    <th>Fecha</th>
+                                    <th>Ciudadano</th>
+                                    <th>Módulo</th>
+                                    <th>Trámite</th>
+                                    <th>Documento de nacionalidad</th>
+                                    <th>Comprobante de domicilio</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (CitaDTO c in Model)
+                                {
+                                    <tr>
+                                        <td>@c.Folio</td>
+                                        <td>@c.Fecha</td>
+                                        <td>@c.Ciudadano</td>
+                                        <td>@c.Modulo</td>
+                                        <td>@c.Tramite</td>
+                                        <td>@c.DocumentoNacionalidad</td> 
+                                        <td>@c.ComprobanteDomicilio</td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
